@@ -32,12 +32,18 @@ class PersoncListTVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "personalCell", for: indexPath)
         let currentPerson = person[indexPath.section]
         cell.textLabel!.text = currentPerson.fullName
+        cell.accessoryType = .disclosureIndicator
 
         return cell
     }
     
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        .none
+        return  .delete
+    }
+//    метод для удаления персоны из массива и удаления секции из тейблвью
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        person.remove(at: indexPath.section)
+        tableView.deleteSections(IndexSet(arrayLiteral: indexPath.section), with: .fade)
     }
     
 //    метод для перемещения секций
