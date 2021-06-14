@@ -9,14 +9,14 @@ import UIKit
 
 
 class ContactsTVC: UITableViewController {
-   
+    
     var person : [Person] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        
     }
-  
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return person.count
@@ -24,7 +24,7 @@ class ContactsTVC: UITableViewController {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return person[section].fullName
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }

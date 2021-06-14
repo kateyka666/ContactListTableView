@@ -17,14 +17,14 @@ class OnePersonVC: UIViewController {
     
     var person : Person!
     
-//создаем контроллер для отправки письма
+    //создаем контроллер для отправки письма
     var mailVC = MFMailComposeViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         makeLabelsAndButtons()
-       
+        
         mailVC.mailComposeDelegate = self
     }
     
@@ -46,28 +46,28 @@ extension OnePersonVC {
         
         phoneBtn.setTitle("Phone: \(person.phone)", for: .normal)
         emailBtn.setTitle("Email: \(person.email)", for: .normal)
-   
+        
     }
     
-//    метод для вызова номера телефона
-   private func call() {
+    //    метод для вызова номера телефона
+    private func call() {
         let url = URL(string: "tel://\(person.phone)")!
-    let application:UIApplication = UIApplication.shared
+        let application:UIApplication = UIApplication.shared
         if (application.canOpenURL(url)) {
             application.open(url, options: [:], completionHandler: nil)
         }
-}
+    }
     
     private func emailSend(){
-//        назначаем кому слать пимьсо
+        //        назначаем кому слать пимьсо
         mailVC.setToRecipients([person.email])
-//        добавляем мейлконтроллер на главный контроллер
+        //        добавляем мейлконтроллер на главный контроллер
         present(mailVC, animated: true, completion: nil)
     }
 }
 
 extension OnePersonVC : MFMailComposeViewControllerDelegate {
-//    пытаемся делать обработчик для действий с письмом)
+    //    пытаемся делать обработчик для действий с письмом)
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         switch result {
         case .cancelled:
