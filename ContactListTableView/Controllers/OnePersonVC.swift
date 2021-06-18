@@ -24,7 +24,7 @@ class OnePersonVC: UIViewController {
         super.viewDidLoad()
         
         makeLabelsAndButtons()
-        
+        print("1c")
         mailVC.mailComposeDelegate = self
     }
     
