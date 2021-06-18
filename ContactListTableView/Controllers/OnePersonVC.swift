@@ -26,7 +26,7 @@ class OnePersonVC: UIViewController {
         makeLabelsAndButtons()
      
         mailVC.mailComposeDelegate = self
-        print("32478723035365467576741c")
+        print("3247872354675776883035365467576741c")
     }
     
     @IBAction func phonaBtnPressed() {
