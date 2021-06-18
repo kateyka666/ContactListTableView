@@ -10,7 +10,7 @@ import UIKit
 
 class ContactsTVC: UITableViewController {
     
-    var person : [Person] = []
+    var person: [Person] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()

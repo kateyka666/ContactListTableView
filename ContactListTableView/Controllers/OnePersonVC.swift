@@ -15,7 +15,7 @@ class OnePersonVC: UIViewController {
     @IBOutlet weak var emailBtn: UIButton!
     @IBOutlet weak var phoneBtn: UIButton!
     
-    var person : Person!
+    var person: Person!
     
     //создаем контроллер для отправки письма
     var mailVC = MFMailComposeViewController()
